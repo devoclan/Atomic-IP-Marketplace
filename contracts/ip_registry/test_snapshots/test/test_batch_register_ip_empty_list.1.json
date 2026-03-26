@@ -13,16 +13,13 @@
           "function": {
             "contract_fn": {
               "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "function_name": "set_merkle_root",
+              "function_name": "batch_register_ip",
               "args": [
                 {
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
                 },
                 {
-                  "u64": "2"
-                },
-                {
-                  "bytes": "2e5e04073a2176c41ba2b74e09f8cea1170db7b404475cd5fcfa5e1d555982ef"
+                  "vec": []
                 }
               ]
             }
@@ -31,7 +28,6 @@
         }
       ]
     ],
-    [],
     []
   ],
   "ledger": {
@@ -44,60 +40,6 @@
     "min_temp_entry_ttl": 16,
     "max_entry_ttl": 6312000,
     "ledger_entries": [
-      {
-        "entry": {
-          "last_modified_ledger_seq": 0,
-          "data": {
-            "contract_data": {
-              "ext": "v0",
-              "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "key": {
-                "vec": [
-                  {
-                    "symbol": "MerkleRoot"
-                  },
-                  {
-                    "u64": "2"
-                  }
-                ]
-              },
-              "durability": "persistent",
-              "val": {
-                "bytes": "2e5e04073a2176c41ba2b74e09f8cea1170db7b404475cd5fcfa5e1d555982ef"
-              }
-            }
-          },
-          "ext": "v0"
-        },
-        "live_until": 6311999
-      },
-      {
-        "entry": {
-          "last_modified_ledger_seq": 0,
-          "data": {
-            "contract_data": {
-              "ext": "v0",
-              "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "key": {
-                "vec": [
-                  {
-                    "symbol": "Owner"
-                  },
-                  {
-                    "u64": "2"
-                  }
-                ]
-              },
-              "durability": "persistent",
-              "val": {
-                "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-              }
-            }
-          },
-          "ext": "v0"
-        },
-        "live_until": 6311999
-      },
       {
         "entry": {
           "last_modified_ledger_seq": 0,
@@ -157,38 +99,5 @@
       }
     ]
   },
-  "events": [
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-        "type_": "contract",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "proof_verified"
-              },
-              {
-                "u64": "2"
-              }
-            ],
-            "data": {
-              "map": [
-                {
-                  "key": {
-                    "symbol": "result"
-                  },
-                  "val": {
-                    "bool": true
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-      "failed_call": false
-    }
-  ]
+  "events": []
 }

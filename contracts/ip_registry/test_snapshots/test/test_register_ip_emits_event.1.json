@@ -13,16 +13,16 @@
           "function": {
             "contract_fn": {
               "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "function_name": "set_merkle_root",
+              "function_name": "register_ip",
               "args": [
                 {
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
                 },
                 {
-                  "u64": "2"
+                  "bytes": "516d5465737448617368"
                 },
                 {
-                  "bytes": "2e5e04073a2176c41ba2b74e09f8cea1170db7b404475cd5fcfa5e1d555982ef"
+                  "bytes": "6d65726b6c655f726f6f745f6279746573"
                 }
               ]
             }
@@ -30,9 +30,7 @@
           "sub_invocations": []
         }
       ]
-    ],
-    [],
-    []
+    ]
   ],
   "ledger": {
     "protocol_version": 25,
@@ -54,16 +52,41 @@
               "key": {
                 "vec": [
                   {
-                    "symbol": "MerkleRoot"
+                    "symbol": "Listing"
                   },
                   {
-                    "u64": "2"
+                    "u64": "1"
                   }
                 ]
               },
               "durability": "persistent",
               "val": {
-                "bytes": "2e5e04073a2176c41ba2b74e09f8cea1170db7b404475cd5fcfa5e1d555982ef"
+                "map": [
+                  {
+                    "key": {
+                      "symbol": "ipfs_hash"
+                    },
+                    "val": {
+                      "bytes": "516d5465737448617368"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "merkle_root"
+                    },
+                    "val": {
+                      "bytes": "6d65726b6c655f726f6f745f6279746573"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "owner"
+                    },
+                    "val": {
+                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                    }
+                  }
+                ]
               }
             }
           },
@@ -81,16 +104,20 @@
               "key": {
                 "vec": [
                   {
-                    "symbol": "Owner"
+                    "symbol": "OwnerIndex"
                   },
                   {
-                    "u64": "2"
+                    "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
                   }
                 ]
               },
               "durability": "persistent",
               "val": {
-                "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                "vec": [
+                  {
+                    "u64": "1"
+                  }
+                ]
               }
             }
           },
@@ -112,7 +139,20 @@
                   "executable": {
                     "wasm": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
                   },
-                  "storage": null
+                  "storage": [
+                    {
+                      "key": {
+                        "vec": [
+                          {
+                            "symbol": "Counter"
+                          }
+                        ]
+                      },
+                      "val": {
+                        "u64": "1"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -167,20 +207,31 @@
           "v0": {
             "topics": [
               {
-                "symbol": "proof_verified"
+                "symbol": "ip_registered"
               },
               {
-                "u64": "2"
+                "u64": "1"
+              },
+              {
+                "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
               }
             ],
             "data": {
               "map": [
                 {
                   "key": {
-                    "symbol": "result"
+                    "symbol": "ipfs_hash"
                   },
                   "val": {
-                    "bool": true
+                    "bytes": "516d5465737448617368"
+                  }
+                },
+                {
+                  "key": {
+                    "symbol": "merkle_root"
+                  },
+                  "val": {
+                    "bytes": "6d65726b6c655f726f6f745f6279746573"
                   }
                 }
               ]
